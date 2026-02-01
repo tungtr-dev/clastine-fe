@@ -1,7 +1,8 @@
+import { IconView } from "@common/data/index.ts";
+import { SVGSource } from "@constants/svg-source.enum.ts";
+
 export const Clastine = () => {
 	return (
-		<>
-			Not enough minerals
-		</>
+		<IconView source={SVGSource.Dashboard} />
 	);
 };

@@ -7,7 +7,9 @@
 		"moduleResolution": "nodenext",
 		"baseUrl": "src",
 		"paths": {
-			"@core/*": ["components/core/*"]
+			"@core/*": ["components/core/*"],
+			"@common/*": ["components/common/*"],
+			"@constants/*": ["constants/*"]
 		}
 	}
 }
