@@ -9,7 +9,7 @@
 		"paths": {
 			"@core/*": ["components/core/*"],
 			"@common/*": ["components/common/*"],
-			"@constants/*": ["constants/*"]
+			"@constants/*": ["constants/*"],
 		}
 	}
 }

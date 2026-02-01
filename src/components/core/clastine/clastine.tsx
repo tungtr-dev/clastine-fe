@@ -1,12 +1,17 @@
-import { IconView, TextView } from "@common/data/index.ts";
+import { MenuItemView } from "@common/navigation/index.ts";
 import { SVGSource } from "@constants/svg-source.enum.ts";
-import "./clastine.css";
+import "./clastine.scss";
 
 export const Clastine = () => {
 	return (<>
-		<IconView source={SVGSource.Dashboard} />
-		<TextView>
-			Clastine
-		</TextView>
+		{[
+			"Dashboard",
+			"Classrooms",
+			"Calendar"
+		].map(label => (
+			<MenuItemView icon={SVGSource.Dashboard}>
+				{label}
+			</MenuItemView>
+		))}
 	</>);
 };
