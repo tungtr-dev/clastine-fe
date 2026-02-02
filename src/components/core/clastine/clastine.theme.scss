@@ -1,0 +1,32 @@
+body {
+	font-family: "Lexend", sans-serif;
+	margin: 0;
+}
+
+.clastine {
+	&[current-theme="light"] {
+		--color-neutral-00: #ffffff;
+		--color-neutral-10: #eceaf0;
+		--color-neutral-20: #d9d6df;
+		--color-neutral-30: #bfbbc6;
+		--color-neutral-40: #a6a2b1;
+		--color-neutral-50: #8c8895;
+		--color-neutral-60: #6b6576;
+		--color-neutral-70: #4d4856;
+		--color-neutral-80: #393541;
+		--color-neutral-90: #242129;
+	}
+
+	&[current-theme="dark"] {
+		--color-neutral-00: #242129;
+		--color-neutral-10: #393541;
+		--color-neutral-20: #4d4856;
+		--color-neutral-30: #6b6576;
+		--color-neutral-40: #8c8895;
+		--color-neutral-50: #a6a2b1;
+		--color-neutral-60: #bfbbc6;
+		--color-neutral-70: #d9d6df;
+		--color-neutral-80: #eceaf0;
+		--color-neutral-90: #ffffff;
+	}
+}

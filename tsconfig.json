@@ -10,6 +10,7 @@
 			"@core/*": ["components/core/*"],
 			"@common/*": ["components/common/*"],
 			"@constants/*": ["constants/*"],
+			"@contexts/*": ["utilities/contexts/*"]
 		}
 	}
 }
