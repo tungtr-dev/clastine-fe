@@ -10,9 +10,17 @@
 
 	transition: all .2s;
 
+	.icon {
+		filter: var(--svg-filter-neutral-30);
+	}
+
 	&:hover {
 		background: var(--color-neutral-10);
 		color: var(--color-neutral-50);
+
+		.icon {
+			filter: var(--svg-filter-neutral-50);
+		}
 	}
 
 	&:active {
@@ -22,5 +30,7 @@
 	* {
 		pointer-events: none;
 		user-select: none;
+
+		transition: all .2s;
 	}
 }
