@@ -3,8 +3,8 @@ import { IconView, TextView } from "@common/data/index.ts";
 import "./menu-item.view.scss";
 
 export const MenuItemView = ({
+	label,
 	icon,
-	children,
 	onClick = () => {}
 }: IMenuItemViewProperties) => {
 	return <div
@@ -13,7 +13,7 @@ export const MenuItemView = ({
 	>
 		{icon && <IconView source={icon} />}
 		<TextView>
-			{children}
+			{label}
 		</TextView>
 	</div>
 };
