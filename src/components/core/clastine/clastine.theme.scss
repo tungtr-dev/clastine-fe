@@ -4,7 +4,7 @@ body {
 }
 
 .clastine {
-	&[current-theme="light"] {
+	&[clst-theme="light"] {
 		--color-neutral-00: #ffffff;
 		--color-neutral-10: #eceaf0;
 		--color-neutral-20: #d9d6df;
@@ -28,7 +28,7 @@ body {
 		--svg-filter-neutral-90: brightness(0) saturate(100%) invert(11%) sepia(4%) saturate(2267%) hue-rotate(221deg) brightness(107%) contrast(95%);
 	}
 
-	&[current-theme="dark"] {
+	&[clst-theme="dark"] {
 		--color-neutral-00: #242129;
 		--color-neutral-10: #393541;
 		--color-neutral-20: #4d4856;

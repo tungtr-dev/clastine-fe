@@ -4,12 +4,18 @@ import "./clastine.scss";
 import "./clastine.theme.scss";
 import { NavigationBarView } from "components/layout/index.ts";
 import { SVGSource } from "@constants/svg-source.enum.ts";
+import { useBreakpoint } from "utilities/hooks/index.ts";
 
 export const Clastine = () => {
 	const theme = useContext(ThemeContext);
+	const breakpoint = useBreakpoint();
 
 	return (
-		<div className="clastine" current-theme={theme}>
+		<div
+			className="clastine"
+			clst-theme={theme}
+			clst-breakpoint={breakpoint}
+		>
 			<NavigationBarView
 				items={[
 					{
