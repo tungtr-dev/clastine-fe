@@ -1,6 +1,6 @@
-import { TextViewType } from "./text.view.enum.ts";
-import { IViewProperties } from "@common/types/view.interface.ts";
+import { TextViewType } from "./enums/text.view.enum.ts";
 
-export interface ITextViewProperties extends IViewProperties {
+export interface ITextViewProps {
+	content: string;
 	type?: TextViewType;
 };

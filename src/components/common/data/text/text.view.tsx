@@ -1,9 +1,9 @@
-import { TextViewType } from "./text.view.enum.ts";
-import { ITextViewProperties } from "./text.view.interface.ts";
+import { TextViewType } from "./enums/text.view.enum.ts";
+import { ITextViewProps } from "./text.view.interface.ts";
 
 export const TextView = ({
-	children,
+	content,
 	type: Tag = TextViewType.Label
-}: ITextViewProperties) => {
-	return <Tag>{children}</Tag>
+}: ITextViewProps) => {
+	return <Tag>{content}</Tag>
 };

@@ -1,4 +1,4 @@
-import { Breakpoint } from "@constants/breakpoint.enum.ts";
+import { Breakpoint } from "@constants";
 
 export interface IBreakpoint {
 	key: Breakpoint;
