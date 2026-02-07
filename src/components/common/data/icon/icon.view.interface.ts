@@ -1,5 +1,5 @@
-import { SVGSource } from "@constants/svg-source.enum.ts";
+import { SVGSource } from "@constants";
 
-export interface IIconViewProperties {
+export interface IIconViewProps {
 	source: SVGSource;
 }

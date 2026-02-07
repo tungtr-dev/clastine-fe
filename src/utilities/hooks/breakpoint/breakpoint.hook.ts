@@ -1,6 +1,6 @@
-import { Breakpoint } from "@constants/breakpoint.enum.ts";
 import { useState } from "react";
 import { IBreakpoint } from "./breakpoint.hook.interface.ts";
+import { Breakpoint } from "@constants";
 
 const breakpoints: IBreakpoint[] = [
 	{

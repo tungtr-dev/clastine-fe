@@ -1,8 +1,8 @@
-import { IIconViewProperties } from "./icon.view.interface.ts";
+import { IIconViewProps } from "./icon.view.interface.ts";
 
 export const IconView = ({
 	source
-}: IIconViewProperties) => {
+}: IIconViewProps) => {
 	return <img
 		className="icon"
 		src={`/src/resources/svg/ic-${source}.svg`}

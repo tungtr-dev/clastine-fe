@@ -7,10 +7,12 @@
 		"moduleResolution": "nodenext",
 		"baseUrl": "src",
 		"paths": {
-			"@core/*": ["components/core/*"],
-			"@common/*": ["components/common/*"],
-			"@constants/*": ["constants/*"],
-			"@contexts/*": ["utilities/contexts/*"]
+			"@components/core": ["components/core/index.ts"],
+			"@components/common/data": ["components/common/data/index.ts"],
+			"@components/layout": ["components/layout/index.ts"],
+			"@constants": ["constants/index.ts"],
+			"@contexts": ["utilities/contexts/index.ts"],
+			"@hooks": ["utilities/hooks/index.ts"]
 		}
 	}
 }

@@ -1,1 +1,0 @@
-export type { IViewProperties } from "./view.interface.ts";
