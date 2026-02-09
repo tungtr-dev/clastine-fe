@@ -1,13 +1,14 @@
 import { NavigationBarView } from "@components/layout";
 import { SVGSource } from "@constants";
-import { useBreakpoint } from "@hooks";
 import { ThemeContext } from "@contexts";
 import { useContext } from "react";
 import "./clastine.scss";
+import { useAppSelector } from "@hooks";
+import { selectBreakpoint } from "@store";
 
 export const Clastine = () => {
+	const breakpoint = useAppSelector(selectBreakpoint);
 	const theme = useContext(ThemeContext);
-	const breakpoint = useBreakpoint();
 
 	return (
 		<div

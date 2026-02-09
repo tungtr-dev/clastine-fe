@@ -18,3 +18,5 @@ export const breakpointSlice = createSlice({
 export const selectBreakpoint = (state: TRootState) => state.breakpoint.value;
 
 export const breakpointReducer = breakpointSlice.reducer;
+
+export const breakpointActions = breakpointSlice.actions;
