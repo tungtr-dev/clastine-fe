@@ -13,7 +13,8 @@
 			"@store": ["data/store/index.ts"],
 			"@constants": ["constants/index.ts"],
 			"@contexts": ["utilities/contexts/index.ts"],
-			"@hooks": ["utilities/hooks/index.ts"]
+			"@hooks": ["utilities/hooks/index.ts"],
+			"@initializer": ["utilities/initializer/initializer.ts"]
 		}
 	}
 }
