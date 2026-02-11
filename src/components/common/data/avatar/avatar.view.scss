@@ -1,0 +1,11 @@
+.avatar {
+	--avatar-size: 32px;
+
+	border-radius: 50%;
+	width: var(--avatar-size);
+	height: var(--avatar-size);
+
+	&--sm {
+		--avatar-size: 24px;
+	}
+}
