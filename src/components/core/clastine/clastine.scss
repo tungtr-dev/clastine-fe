@@ -1,4 +1,4 @@
-@use "@styles/_theme.scss";
+@use "@styles/theme";
 
 $themes: "light", "dark";
 
@@ -15,4 +15,5 @@ body {
 	}
 
 	background: var(--color-neutral-00);
+	height: 100vh;
 }

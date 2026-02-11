@@ -28,12 +28,12 @@ export const initializeBreakpointObserver = () => {
 
 		if (
 			index > 0
-			&& width < breakpoints[index].width
+			&& width <= breakpoints[index - 1].width
 		) {
 			index--;
 		} else if (
 			index < breakpoints.length - 1
-			&& width >= breakpoints[index + 1].width
+			&& width > breakpoints[index].width
 		) {
 			index++;
 		}

@@ -1,0 +1,10 @@
+@use "@styles/breakpoint";
+
+.common-layout {
+	display: flex;
+	height: 100%;
+
+	@include breakpoint.media("sm") {
+		flex-direction: column;
+	}
+}

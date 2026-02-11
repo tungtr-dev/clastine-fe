@@ -5,5 +5,9 @@ export const TextView = ({
 	content,
 	type: Tag = TextViewType.Label
 }: ITextViewProps) => {
-	return <Tag>{content}</Tag>
+	return (
+		<Tag className="text">
+			{content}
+		</Tag>
+	);
 };
