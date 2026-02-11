@@ -1,0 +1,13 @@
+@use "@styles/breakpoint";
+
+$border: 1px solid var(--color-neutral-20);
+
+.navigation-bar {
+	border-right: $border;
+	padding: 12px;
+
+	@include breakpoint.media("sm") {
+		border-right: unset;
+		border-bottom: $border;
+	}
+}

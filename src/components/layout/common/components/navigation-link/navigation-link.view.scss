@@ -1,3 +1,5 @@
+@use "@styles/breakpoint";
+
 .navigation-link {
 	display: flex;
 	align-items: center;
@@ -8,10 +10,23 @@
 	color: var(--color-neutral-30);
 	padding: 8px;
 
-	transition: all .2s;
+	transition:
+		all .2s,
+		gap .5s;
 
 	.icon {
 		filter: var(--svg-filter-neutral-30);
+
+		transition: all .2s;
+	}
+
+	.text {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: clip;
+		width: 200px;
+
+		transition: width .5s;
 	}
 
 	&:hover {
@@ -30,7 +45,13 @@
 	* {
 		pointer-events: none;
 		user-select: none;
+	}
 
-		transition: all .2s;
+	@include breakpoint.media("md") {
+		gap: 0;
+
+		.text {
+			width: 0;
+		}
 	}
 }
