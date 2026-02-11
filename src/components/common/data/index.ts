@@ -1,3 +1,7 @@
+export { AvatarView } from "./avatar/avatar.view.tsx";
+export type { IAvatarViewProps } from "./avatar/avatar.view.interface.ts";
+export { AvatarViewSize } from "./avatar/enums/avatar.view.enum.ts";
+
 export { IconView } from "./icon/icon.view.tsx";
 export type { IIconViewProps } from "./icon/icon.view.interface.ts";
 
