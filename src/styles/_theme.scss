@@ -1,4 +1,7 @@
 @mixin theme($theme) {
+	--color-overlay-background: #24212964;
+	--color-overlay-background--blank: #24212900;
+
 	@if $theme == "light" {
 		--color-primary-00: #dfd7fd;
 		--color-primary-10: #c3b3fa;
