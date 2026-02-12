@@ -1,0 +1,33 @@
+@mixin button {
+	--padding-size: 8px;
+	--padding-size--compact: 4px;
+	--padding-size--current: var(--padding-size);
+
+	border: 0;
+	border-radius: 8px;
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	gap: var(--padding-size--current);
+	padding: var(--padding-size--current);
+
+	transition: all .2s;
+
+	.icon {
+		pointer-events: none;
+	}
+
+	&--with-label {
+		padding:
+			var(--padding-size--current)
+			calc(var(--padding-size--current) * 3 / 2);
+	}
+
+	&--with-icon {
+		padding-left: var(--padding-size--current);
+	}
+
+	&--compact {
+		--padding-size--current: var(--padding-size--compact);
+	}
+}
