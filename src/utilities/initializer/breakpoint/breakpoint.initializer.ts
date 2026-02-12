@@ -26,16 +26,12 @@ export const initializeBreakpointObserver = () => {
 	const resizeObserver = new ResizeObserver(([entry]) => {
 		width = entry.contentRect.width;
 
-		if (
-			index > 0
-			&& width <= breakpoints[index - 1].width
-		) {
-			index--;
-		} else if (
-			index < breakpoints.length - 1
-			&& width > breakpoints[index].width
-		) {
-			index++;
+		if (width <= breakpoints[0].width) {
+			index = 0;
+		} else if (width <= breakpoints[1].width) {
+			index = 1;
+		} else {
+			index = 2;
 		}
 
 		breakpoint = store.getState().breakpoint.value;
