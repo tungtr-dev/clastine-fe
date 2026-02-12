@@ -1,0 +1,18 @@
+@mixin overlay--opened {
+	&--opened {
+		background: var(--color-overlay-background);
+		pointer-events: unset;
+	}
+}
+
+.overlay {
+	background: var(--color-overlay-background--blank);
+	pointer-events: none;
+	z-index: 10;
+
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+
+	transition: all .5s;
+}

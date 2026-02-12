@@ -13,7 +13,7 @@ export const generateClassModifiers = (baseClass: string, inputs: IClassModifier
 		.map(input => {
 			const modifier = generateClassModifier(input);
 
-			return `${baseClass}--${modifier}`;
+			return modifier ? `${baseClass}--${modifier}` : "";
 		})
 		.join(" ");
 };
