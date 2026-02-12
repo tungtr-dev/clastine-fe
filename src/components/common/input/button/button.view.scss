@@ -1,0 +1,15 @@
+@use "./styles/button.view.base.scss" as base;
+@use "./styles/button.view.filled.scss" as filled;
+@use "./styles/button.view.subtle.scss" as subtle;
+
+.button {
+	@include base.button();
+
+	&--filled {
+		@include filled.button-filled();
+	}
+
+	&--subtle {
+		@include subtle.button-subtle();
+	}
+}

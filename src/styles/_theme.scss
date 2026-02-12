@@ -1,5 +1,16 @@
 @mixin theme($theme) {
 	@if $theme == "light" {
+		--color-primary-00: #dfd7fd;
+		--color-primary-10: #c3b3fa;
+		--color-primary-20: #a790f8;
+		--color-primary-30: #8c6ef7;
+		--color-primary-40: #724cf9;
+		--color-primary-50: #5e3bdc;
+		--color-primary-60: #4d2ebf;
+		--color-primary-70: #381f91;
+		--color-primary-80: #261466;
+		--color-primary-90: #1a0f44;
+
 		--color-neutral-00: #ffffff;
 		--color-neutral-10: #eceaf0;
 		--color-neutral-20: #d9d6df;
@@ -23,6 +34,17 @@
 		--svg-filter-neutral-90: brightness(0) saturate(100%) invert(11%) sepia(4%) saturate(2267%) hue-rotate(221deg) brightness(107%) contrast(95%);
 	}
 	@else {
+		--color-primary-00: #1a0f44;
+		--color-primary-10: #261466;
+		--color-primary-20: #381f91;
+		--color-primary-30: #4d2ebf;
+		--color-primary-40: #5e3bdc;
+		--color-primary-50: #724cf9;
+		--color-primary-60: #8c6ef7;
+		--color-primary-70: #a790f8;
+		--color-primary-80: #c3b3fa;
+		--color-primary-90: #dfd7fd;
+
 		--color-neutral-00: #242129;
 		--color-neutral-10: #393541;
 		--color-neutral-20: #4d4856;

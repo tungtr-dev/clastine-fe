@@ -9,10 +9,12 @@
 		"paths": {
 			"@components/core": ["components/core/index.ts"],
 			"@components/common/data": ["components/common/data/index.ts"],
+			"@components/common/input": ["components/common/input/index.ts"],
 			"@components/layout": ["components/layout/index.ts"],
 			"@store": ["data/store/index.ts"],
 			"@constants": ["constants/index.ts"],
 			"@contexts": ["utilities/contexts/index.ts"],
+			"@functions": ["utilities/functions/index.ts"],
 			"@hooks": ["utilities/hooks/index.ts"],
 			"@initializer": ["utilities/initializer/initializer.ts"]
 		}

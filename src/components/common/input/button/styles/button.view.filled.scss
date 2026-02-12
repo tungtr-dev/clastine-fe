@@ -1,0 +1,16 @@
+@mixin button-filled {
+	background: var(--color-primary-40);
+	color: var(--color-neutral-00);
+
+	.icon {
+		filter: var(--svg-filter-neutral-00);
+	}
+
+	&:hover {
+		background: var(--color-primary-30);
+	}
+
+	&:active {
+		background: var(--color-primary-50);
+	}
+}
