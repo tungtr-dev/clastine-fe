@@ -24,7 +24,7 @@
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: clip;
-		width: 200px;
+		width: 208px;
 
 		transition: width .5s;
 	}
@@ -45,13 +45,5 @@
 	* {
 		pointer-events: none;
 		user-select: none;
-	}
-
-	@include breakpoint.media("md") {
-		gap: 0;
-
-		.text {
-			width: 0;
-		}
 	}
 }

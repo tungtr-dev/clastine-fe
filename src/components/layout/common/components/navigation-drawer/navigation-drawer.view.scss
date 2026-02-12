@@ -1,0 +1,16 @@
+@use "@styles/breakpoint";
+
+.navigation-drawer {
+	.drawer__content {
+		background: var(--color-neutral-00);
+		border-right: 1px solid var(--color-neutral-20);
+
+		.navigation-header {
+			margin-bottom: 8px;
+		}
+
+		.navigation-content {
+			width: 100%;
+		}
+	}
+}
