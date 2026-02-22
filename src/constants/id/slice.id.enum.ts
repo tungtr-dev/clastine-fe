@@ -1,3 +1,4 @@
-export enum SliceId {
-	Breakpoint = "breakpoint-slice"
+export enum SliceID {
+	Breakpoint = "breakpoint-slice",
+	Modal = "modal-slice"
 };
