@@ -1,7 +1,6 @@
-import { IParentViewProps, IViewProps } from "@components/types";
+import { IParentViewProps } from "@components/common/types";
+import { IOverlayViewProps } from "../overlay/overlay.view.interface.ts";
 
 export interface IDrawerContentViewProps extends IParentViewProps {}
 
-export interface IDrawerViewProps extends IViewProps, IParentViewProps {
-	isOpened: boolean;
-}
+export interface IDrawerViewProps extends IOverlayViewProps {}

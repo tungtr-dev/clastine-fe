@@ -1,4 +1,4 @@
-import { CommonLayout } from "@components/layout";
+import { StandardLayout } from "@components/application/layout";
 import { ThemeContext } from "@contexts";
 import { useContext } from "react";
 import "./clastine.scss";
@@ -11,7 +11,7 @@ export const Clastine = () => {
 			className="clastine"
 			clst-theme={theme}
 		>
-			<CommonLayout />
+			<StandardLayout />
 		</div>
 	);
 };

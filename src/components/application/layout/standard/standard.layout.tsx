@@ -6,9 +6,9 @@ import { NavigationDrawerView } from "./components/navigation-drawer/navigation-
 import { NavigationBarView } from "./components/navigation-wrapper/navigation-bar.view.tsx";
 import { INavigationLinkGroups } from "./utilities/contexts/navigation.context.interface.ts";
 import { NavigationContext } from "./utilities/contexts/navigation.context.ts";
-import "./common.layout.scss";
+import "./standard.layout.scss";
 
-export const CommonLayout = () => {
+export const StandardLayout = () => {
 	const [isDrawerOpened, drawerActions] = useDisclosure(false);
 
 	const [isNavigationBarCompact, { toggle }] = useDisclosure(false);
@@ -51,10 +51,10 @@ export const CommonLayout = () => {
 			isDrawerOpened,
 			drawerActions
 		}}>
-			<div className="common-layout">
+			<div className="standard-layout">
 				{breakpoint === Breakpoint.Small && <NavigationDrawerView />}
 				<NavigationBarView isCompact={isNavigationBarCompact} />
-				<div className="common-layout__content">
+				<div className="standard-layout__content">
 					Main Content
 				</div>
 			</div>

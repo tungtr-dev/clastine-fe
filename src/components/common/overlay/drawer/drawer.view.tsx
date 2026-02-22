@@ -1,4 +1,3 @@
-import { generateClassModifiers } from "@functions";
 import { OverlayView } from "../overlay/overlay.view.tsx";
 import { DrawerContentView } from "./drawer.content.view.tsx";
 import { IDrawerViewProps } from "./drawer.view.interface.ts";
@@ -9,12 +8,12 @@ export const DrawerView = ({
 	className,
 	isOpened
 }: IDrawerViewProps) => {
-	const classModifiers = generateClassModifiers("drawer", [
-		{ modifier: "opened", evaluate: () => isOpened }
-	]);
-
 	return (
-		<OverlayView className={`drawer ${className} ${classModifiers}`}>
+		<OverlayView
+			className={className}
+			viewClassName="drawer"
+			isOpened={isOpened}
+		>
 			<DrawerContentView>
 				{children}
 			</DrawerContentView>

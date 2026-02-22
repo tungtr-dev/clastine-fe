@@ -1,4 +1,4 @@
-import { Clastine } from "@components/core";
+import { Clastine } from "@components/application/core";
 import { Theme } from "@constants";
 import { ThemeContext } from "@contexts";
 import { initialize } from "@initializer";
