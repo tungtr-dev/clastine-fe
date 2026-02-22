@@ -32,6 +32,7 @@
 	&:hover {
 		background: var(--color-neutral-10);
 		color: var(--color-neutral-50);
+		cursor: pointer;
 
 		.icon {
 			filter: var(--svg-filter-neutral-50);

@@ -17,6 +17,10 @@
 		pointer-events: none;
 	}
 
+	&:hover {
+		cursor: pointer;
+	}
+
 	&--with-label {
 		padding:
 			var(--padding-size--current)
