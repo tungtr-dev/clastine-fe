@@ -1,10 +1,10 @@
-import { Breakpoint, SliceId } from "@constants";
+import { Breakpoint, SliceID } from "@constants";
 import { IBreakpointState } from "./breakpoint.slice.interface.ts";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { TRootState } from "../store.interface.ts";
+import { TRootState } from "../../store.interface.ts";
 
 export const breakpointSlice = createSlice({
-	name: SliceId.Breakpoint,
+	name: SliceID.Breakpoint,
 	initialState: {
 		value: Breakpoint.Large
 	} as IBreakpointState,
