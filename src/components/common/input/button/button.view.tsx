@@ -9,13 +9,15 @@ export const ButtonView = ({
 	icon,
 	variant = ButtonViewVariant.Filled,
 	isCompact,
+	isStretched,
 	onClick = () => {}
 }: IButtonViewProps) => {
 	const classModifiers = generateClassModifiers("button", [
 		{ modifier: "with-label", evaluate: () => !!label },
 		{ modifier: "with-icon", evaluate: () => !!icon },
 		{ modifier: variant },
-		{ modifier: "compact", evaluate: () => isCompact }
+		{ modifier: "compact", evaluate: () => isCompact },
+		{ modifier: "stretched", evaluate: () => isStretched }
 	]);
 
 	return (

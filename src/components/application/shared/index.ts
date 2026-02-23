@@ -1,0 +1,1 @@
+export { AccountModalView } from "./modal/account/account.modal.view.tsx";
