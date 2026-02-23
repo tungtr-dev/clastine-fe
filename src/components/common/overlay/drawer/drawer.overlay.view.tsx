@@ -7,14 +7,14 @@ export const DrawerOverlayView = ({
 	children,
 	className,
 	isOpen,
-	disclosureActions
+	close
 }: IDrawerOverlayViewProps) => {
 	return (
 		<OverlayView
 			className={className}
 			viewClassName="drawer-overlay"
 			isOpen={isOpen}
-			disclosureActions={disclosureActions}
+			close={close}
 		>
 			<DrawerView>
 				{children}

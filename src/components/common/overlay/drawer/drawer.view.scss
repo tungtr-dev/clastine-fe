@@ -11,6 +11,8 @@
 }
 
 .drawer-overlay {
+	$animation-duration: .5s;
+
 	.drawer {
 		$padding: 8px;
 
@@ -23,7 +25,7 @@
 
 		animation: {
 			name: drawer-open;
-			duration: .5s;
+			duration: $animation-duration;
 			timing-function: ease-out;
 			fill-mode: forwards;
 		}
@@ -33,11 +35,15 @@
 		}
 	}
 
-	&.overlay--close {
-		.drawer {
-			animation: {
-				name: drawer-close;
-				timing-function: ease-in;
+	&.overlay {
+		animation-duration: $animation-duration;
+
+		&--close {
+			.drawer {
+				animation: {
+					name: drawer-close;
+					timing-function: ease-in;
+				}
 			}
 		}
 	}

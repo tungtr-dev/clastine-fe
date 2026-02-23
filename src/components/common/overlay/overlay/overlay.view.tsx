@@ -8,7 +8,7 @@ export const OverlayView = ({
 	className,
 	viewClassName,
 	isOpen: isOpenProp,
-	disclosureActions: { close }
+	close
 }: IOverlayViewPrivateProps) => {
 	const [isOpen, setIsOpen] = useState(false);
 

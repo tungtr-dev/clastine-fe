@@ -11,7 +11,7 @@ export const NavigationDrawerView = () => {
 		<DrawerOverlayView
 			className="navigation-drawer"
 			isOpen={isDrawerOpen}
-			disclosureActions={drawerActions}
+			close={drawerActions.close}
 		>
 			<NavigationContentView />
 		</DrawerOverlayView>

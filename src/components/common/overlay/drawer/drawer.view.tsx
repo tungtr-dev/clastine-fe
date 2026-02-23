@@ -4,7 +4,10 @@ export const DrawerView = ({
 	children
 }: IDrawerViewProps) => {
 	return (
-		<div className="drawer">
+		<div
+			className="drawer"
+			onClick={event => event.stopPropagation()}
+		>
 			{children}
 		</div>
 	);

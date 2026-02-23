@@ -29,7 +29,7 @@ export const NavigationHeaderView = ({
 					icon={hasMenuButton ? SVGSource.Menu : SVGSource.Close}
 					variant={ButtonViewVariant.Subtle}
 					isCompact={true}
-					onClick={ hasMenuButton ? open : close}
+					onClick={hasMenuButton ? open : close}
 				/>
 			)}
 		</div>
