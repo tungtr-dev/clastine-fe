@@ -3,9 +3,9 @@ import { INavigationContext } from "./navigation.context.interface.ts";
 import { IDisclosureHookActions } from "@hooks";
 
 const baseActions: IDisclosureHookActions = {
-		open: () => {},
-		close: () => {},
-		toggle: () => {}
+	open: () => {},
+	close: () => {},
+	toggle: () => {}
 };
 
 export const NavigationContext = createContext<INavigationContext>({
@@ -13,6 +13,6 @@ export const NavigationContext = createContext<INavigationContext>({
 		main: [],
 		footer: []
 	},
-	isDrawerOpened: false,
+	isDrawerOpen: false,
 	drawerActions: baseActions
 });

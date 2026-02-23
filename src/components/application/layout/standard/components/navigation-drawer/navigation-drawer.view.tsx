@@ -1,18 +1,19 @@
-import { DrawerView } from "@components/common/overlay";
 import { useContext } from "react";
 import { NavigationContext } from "../../utilities/contexts/navigation.context.ts";
 import { NavigationContentView } from "../navigation-content/navigation-content.view.tsx";
+import { DrawerOverlayView } from "@components/common/overlay";
 import "./navigation-drawer.view.scss";
 
 export const NavigationDrawerView = () => {
-	const { isDrawerOpened } = useContext(NavigationContext);
+	const { isDrawerOpen, drawerActions } = useContext(NavigationContext);
 
 	return (
-		<DrawerView
+		<DrawerOverlayView
 			className="navigation-drawer"
-			isOpened={isDrawerOpened}
+			isOpen={isDrawerOpen}
+			disclosureActions={drawerActions}
 		>
 			<NavigationContentView />
-		</DrawerView>
+		</DrawerOverlayView>
 	)
 };

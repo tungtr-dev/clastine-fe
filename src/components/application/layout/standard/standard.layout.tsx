@@ -9,7 +9,7 @@ import { NavigationContext } from "./utilities/contexts/navigation.context.ts";
 import "./standard.layout.scss";
 
 export const StandardLayout = () => {
-	const [isDrawerOpened, drawerActions] = useDisclosure(false);
+	const [isDrawerOpen, drawerActions] = useDisclosure(false);
 
 	const [isNavigationBarCompact, { toggle }] = useDisclosure(false);
 
@@ -48,7 +48,7 @@ export const StandardLayout = () => {
 	return (
 		<NavigationContext value={{
 			links,
-			isDrawerOpened,
+			isDrawerOpen,
 			drawerActions
 		}}>
 			<div className="standard-layout">

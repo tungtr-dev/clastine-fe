@@ -1,7 +1,9 @@
 import { IParentViewProps, IViewProps } from "@components/common/types";
+import { IDisclosureHookActions } from "@hooks";
 
 export interface IOverlayViewProps extends IViewProps, IParentViewProps {
-	isOpened: boolean;
+	isOpen: boolean;
+	disclosureActions: IDisclosureHookActions;
 }
 
 export interface IOverlayViewPrivateProps extends IOverlayViewProps {

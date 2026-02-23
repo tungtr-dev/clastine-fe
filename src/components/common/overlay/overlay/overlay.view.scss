@@ -1,18 +1,29 @@
-@mixin overlay--opened {
-	&--opened {
-		background: var(--color-overlay-background);
-		pointer-events: unset;
-	}
+@keyframes overlay-open {
+	0% { background: var(--color-overlay-background--blank); }
+	100% { background: var(--color-overlay-background); }
+}
+
+@keyframes overlay-close {
+	0% { background: var(--color-overlay-background); }
+	100% { background: var(--color-overlay-background--blank); }
 }
 
 .overlay {
-	background: var(--color-overlay-background--blank);
-	pointer-events: none;
-	z-index: 10;
-
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
+	z-index: 100;
 
-	transition: all .5s;
+	animation: {
+		name: overlay-open;
+		duration: .5s;
+		timing-function: linear;
+		fill-mode: forwards;
+	}
+
+	&--close {
+		animation: {
+			name: overlay-close;
+		}
+	}
 }

@@ -8,6 +8,6 @@ export interface INavigationLinkGroups {
 
 export interface INavigationContext {
 	links: INavigationLinkGroups;
-	isDrawerOpened: boolean;
+	isDrawerOpen: boolean;
 	drawerActions: IDisclosureHookActions;
 }

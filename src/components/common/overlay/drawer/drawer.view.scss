@@ -1,28 +1,44 @@
 @use "@styles/breakpoint";
-@use "../overlay/overlay.view.scss" as overlay;
 
-$border: 1px solid var(--color-neutral-20);
+@keyframes drawer-open {
+	0% { left: -100vw; }
+	100% { left: 0; }
+}
 
-.drawer {
-	@include overlay.overlay--opened();
+@keyframes drawer-close {
+	0% { left: 0; }
+	100% { left: -100vw; }
+}
 
-	&__content {
-		border-right: $border;
-		height: calc(100% - 16px);
-		padding: 8px;
+.drawer-overlay {
+	.drawer {
+		$padding: 8px;
 
+		background-color: var(--color-neutral-00);
+		border-right: var(--border-common);
+		height: calc(100% - ($padding * 2));
+		padding: $padding;
 		position: fixed;
 		top: 0;
-		left: -100vw;
 
-		transition: all .5s;
+		animation: {
+			name: drawer-open;
+			duration: .5s;
+			timing-function: ease-out;
+			fill-mode: forwards;
+		}
 
 		@include breakpoint.media("sm") {
-			width: calc(100% - 16px);
+			width: calc(100% - ($padding * 2));
 		}
 	}
 
-	&--opened &__content {
-		left: 0;
+	&.overlay--close {
+		.drawer {
+			animation: {
+				name: drawer-close;
+				timing-function: ease-in;
+			}
+		}
 	}
 }
