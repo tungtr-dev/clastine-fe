@@ -8,6 +8,8 @@
 	font-weight: 600;
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	line-height: 24px;
 	gap: var(--padding-size--current);
 	padding: var(--padding-size--current);
 
@@ -33,5 +35,9 @@
 
 	&--compact {
 		--padding-size--current: var(--padding-size--compact);
+	}
+
+	&--stretched {
+		width: 100%;
 	}
 }

@@ -6,5 +6,6 @@ export interface IButtonViewProps {
 	icon?: SVGSource;
 	variant?: ButtonViewVariant;
 	isCompact?: boolean;
+	isStretched?: boolean;
 	onClick?: () => void;
 }

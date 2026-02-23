@@ -1,7 +1,6 @@
-import { SVGSource, Breakpoint } from "@constants";
-import { useDisclosure } from "@hooks";
-import { selectBreakpoint } from "@store";
-import { useSelector } from "react-redux";
+import { SVGSource, Breakpoint, ModalID } from "@constants";
+import { useAppDispatch, useAppSelector, useDisclosure } from "@hooks";
+import { modalActions, selectBreakpoint } from "@store";
 import { NavigationDrawerView } from "./components/navigation-drawer/navigation-drawer.view.tsx";
 import { NavigationBarView } from "./components/navigation-wrapper/navigation-bar.view.tsx";
 import { INavigationLinkGroups } from "./utilities/contexts/navigation.context.interface.ts";
@@ -13,7 +12,9 @@ export const StandardLayout = () => {
 
 	const [isNavigationBarCompact, { toggle }] = useDisclosure(false);
 
-	const breakpoint = useSelector(selectBreakpoint);
+	const breakpoint = useAppSelector(selectBreakpoint);
+
+	const dispatch = useAppDispatch();
 
 	const links: INavigationLinkGroups = {
 		main: [
@@ -40,7 +41,8 @@ export const StandardLayout = () => {
 			},
 			{
 				icon: SVGSource.Account,
-				label: "Login"
+				label: "Login",
+				onClick: () => dispatch(modalActions.open(ModalID.Account))
 			}
 		]
 	};

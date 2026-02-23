@@ -1,0 +1,83 @@
+@use "@styles/breakpoint";
+
+@keyframes modal-open {
+	0% {
+		opacity: 0;
+		scale: .9;
+	}
+
+	100% {
+		opacity: 1;
+		scale: 1;
+	}
+}
+
+@keyframes modal-close {
+	0% {
+		opacity: 1;
+		scale: 1;
+	}
+
+	100% {
+		opacity: 0;
+		scale: .9;
+	}
+}
+
+.modal-overlay {
+	$animation-duration: .1s;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.modal {
+		$padding: 16px;
+
+		background-color: var(--color-neutral-00);
+		border-radius: 16px;
+		padding: $padding;
+		transform-origin: center center;
+		width: 480px;
+
+		animation: {
+			name: modal-open;
+			duration: $animation-duration;
+			timing-function: ease-out;
+			fill-mode: forwards;
+		}
+
+		&__header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 16px;
+
+			h3 {
+				margin: 0;
+			}
+		}
+
+		@include breakpoint.media("md") {
+			width: 320px;
+		}
+
+		@include breakpoint.media("sm") {
+			width: calc(100vw - $padding * 2 - 32px);
+		}
+	}
+
+	&.overlay {
+		animation-duration: $animation-duration;
+
+		&--close {
+			.modal {
+				animation: {
+					name: modal-close;
+					timing-function: ease-in;
+				}
+			}
+		}
+	}
+
+}
