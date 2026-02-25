@@ -3,16 +3,42 @@
 	flex-direction: column;
 	gap: 4px;
 
-	input {
+	&__wrapper {
 		border: var(--border-common);
 		border-radius: 4px;
-		font-size: 16px;
-		outline: none;
 		padding: 8px;
+		display: flex;
+		align-items: center;
+		gap: 4px;
+		cursor: text;
 
 		transition: border .2s;
 
-		&:focus {
+		input {
+			border: none;
+			font-size: 16px;
+			line-height: 24px;
+			outline: none;
+			padding: 0;
+
+			flex: 1;
+
+			&::placeholder {
+				color: var(--color-neutral-40);
+			}
+		}
+
+		.icon {
+			filter: var(--svg-filter-neutral-40);
+			width: 16px;
+			height: 16px;
+		}
+
+		&:has(input:focus) {
+			border-color: var(--color-primary-40);
+		}
+
+		&:active {
 			border-color: var(--color-primary-40);
 		}
 	}
@@ -36,10 +62,11 @@
 		}
 	}
 
-	&--error {
-		input, input:focus {
+	&--error &__wrapper {
+		border-color: var(--color-error-40);
+
+		&:has(input:focus) {
 			border-color: var(--color-error-40);
-			color: var(--color-error-40);
 		}
 	}
 }

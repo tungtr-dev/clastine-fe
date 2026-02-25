@@ -1,10 +1,16 @@
-import { InputFieldType } from "./enums/input-field.view.enum.ts";
+import { Ref } from "react";
+import { InputType } from "./enums/input-field.view.enum.ts";
 
-export interface IInputFieldViewProps {
+export interface IInputViewProps {
 	name: string;
+	placeholder?: string;
+	isRequired?: boolean;
+	ref?: Ref<HTMLInputElement>;
+}
+
+export interface IInputFieldViewProps extends IInputViewProps {
 	label?: string;
 	description?: string;
+	type?: InputType;
 	error?: string;
-	type?: InputFieldType;
-	isRequired?: boolean;
 }
