@@ -7,13 +7,12 @@ import { generateClassModifiers } from "@functions";
 import "./input-field.view.scss";
 
 export const InputFieldView = ({
-	name,
+	registry,
 	label = "",
 	description = "",
 	error = "",
 	type = InputType.Text,
-	placeholder,
-	isRequired = false
+	placeholder
 }: IInputFieldViewProps) => {
 	const inputRef = useRef<HTMLInputElement>(null);
 
@@ -28,7 +27,7 @@ export const InputFieldView = ({
 			<TextView
 				content={label}
 				tag={TextViewTag.Label}
-				inputName={name}
+				inputName={registry.name}
 			/>
 			{description &&
 				<TextView
@@ -41,10 +40,14 @@ export const InputFieldView = ({
 				onClick={() => inputRef.current.focus()}
 			>
 				<InputView
-					name={name}
+					registry={{
+						...registry,
+						ref: (instance: HTMLInputElement) => {
+							registry.ref(instance);
+							inputRef.current = instance;
+						}
+					}}
 					placeholder={placeholder}
-					isRequired={isRequired}
-					ref={inputRef}
 				/>
 			</div>
 			{error && 

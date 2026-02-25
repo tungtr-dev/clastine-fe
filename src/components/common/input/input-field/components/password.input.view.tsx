@@ -6,9 +6,7 @@ import { IInputViewProps } from "../input-field.view.interface.ts";
 import { ButtonViewVariant } from "../../button/enums/button.view.enum.ts";
 
 export const PasswordInputView = ({
-	name,
-	isRequired = false,
-	ref
+	registry
 }: IInputViewProps) => {
 	const [isVisible, setIsVisible] = useState(false);
 
@@ -20,9 +18,7 @@ export const PasswordInputView = ({
 		<>
 			<input
 				type={type}
-				name={name}
-				required={isRequired}
-				ref={ref}
+				{...registry}
 			/>
 			<ButtonView
 				label=""
