@@ -1,7 +1,8 @@
+import { useRef } from "react";
 import { IconView, TextView, TextViewTag } from "@components/common/data";
-import { InputFieldType } from "./enums/input-field.view.enum.ts";
-import { IInputFieldViewProps } from "./input-field.view.interface.ts";
 import { SVGSource } from "@constants";
+import { InputType, InputViewByType } from "./enums/input-field.view.enum.ts";
+import { IInputFieldViewProps } from "./input-field.view.interface.ts";
 import { generateClassModifiers } from "@functions";
 import "./input-field.view.scss";
 
@@ -10,12 +11,17 @@ export const InputFieldView = ({
 	label = "",
 	description = "",
 	error = "",
-	type = InputFieldType.Text,
+	type = InputType.Text,
+	placeholder,
 	isRequired = false
 }: IInputFieldViewProps) => {
+	const inputRef = useRef<HTMLInputElement>(null);
+
 	const classModifiers = generateClassModifiers("input-field", [
 		{ modifier: "error", evaluate: () => !!error }
 	]);
+
+	const InputView = InputViewByType[type];
 
 	return (
 		<div className={`input-field ${classModifiers}`}>
@@ -30,11 +36,17 @@ export const InputFieldView = ({
 					content={description}
 				/>
 			}
-			<input
-				type={type}
-				name={name}
-				required={isRequired}
-			></input>
+			<div
+				className="input-field__wrapper"
+				onClick={() => inputRef.current.focus()}
+			>
+				<InputView
+					name={name}
+					placeholder={placeholder}
+					isRequired={isRequired}
+					ref={inputRef}
+				/>
+			</div>
 			{error && 
 				<div className="input-field__error">
 					<IconView source={SVGSource.Error} />

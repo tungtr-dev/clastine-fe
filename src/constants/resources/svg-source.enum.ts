@@ -8,5 +8,7 @@ export enum SVGSource {
 	DoubleArrowRight = "double-arrow--right",
 	Education = "education",
 	Error = "error",
-	Menu = "menu"
+	Menu = "menu",
+	Visibility = "visibility",
+	VisibilityOff = "visibility--off"
 };
