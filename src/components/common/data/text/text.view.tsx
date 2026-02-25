@@ -1,13 +1,20 @@
-import { TextViewType } from "./enums/text.view.enum.ts";
+import { TextViewTag } from "./enums/text.view.enum.ts";
 import { ITextViewProps } from "./text.view.interface.ts";
 
 export const TextView = ({
+	className = "",
 	content,
-	type: Tag = TextViewType.Label
+	tag: Tag = TextViewTag.Normal,
+	inputName = ""
 }: ITextViewProps) => {
-	return (
-		<Tag className="text">
-			{content}
-		</Tag>
-	);
+	return (<>
+		{content &&
+			<Tag
+				className={`text ${className}`}
+				htmlFor={inputName}
+			>
+				{content}
+			</Tag>
+		}
+	</>);
 };

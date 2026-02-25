@@ -25,6 +25,17 @@
 		--color-neutral-80: #393541;
 		--color-neutral-90: #242129;
 
+		--color-error-00: #ffdede;
+		--color-error-10: #fcabaa;
+		--color-error-20: #fa8c8a;
+		--color-error-30: #fa6c6a;
+		--color-error-40: #f64946;
+		--color-error-50: #f22c29;
+		--color-error-60: #cd2421;
+		--color-error-70: #a41c1a;
+		--color-error-80: #711312;
+		--color-error-90: #430b0b;
+
 		--svg-filter-neutral-00: brightness(0) saturate(100%) invert(77%) sepia(99%) saturate(0%) hue-rotate(264deg) brightness(110%) contrast(100%);
 		--svg-filter-neutral-10: brightness(0) saturate(100%) invert(85%) sepia(8%) saturate(91%) hue-rotate(219deg) brightness(110%) contrast(92%);
 		--svg-filter-neutral-20: brightness(0) saturate(100%) invert(90%) sepia(12%) saturate(112%) hue-rotate(219deg) brightness(97%) contrast(86%);
@@ -35,6 +46,8 @@
 		--svg-filter-neutral-70: brightness(0) saturate(100%) invert(22%) sepia(2%) saturate(5638%) hue-rotate(220deg) brightness(77%) contrast(64%);
 		--svg-filter-neutral-80: brightness(0) saturate(100%) invert(18%) sepia(18%) saturate(455%) hue-rotate(218deg) brightness(97%) contrast(90%);
 		--svg-filter-neutral-90: brightness(0) saturate(100%) invert(11%) sepia(4%) saturate(2267%) hue-rotate(221deg) brightness(107%) contrast(95%);
+
+		--svg-filter-error-40: brightness(0) saturate(100%) invert(34%) sepia(85%) saturate(2151%) hue-rotate(337deg) brightness(104%) contrast(93%);
 	}
 	@else {
 		--color-primary-00: #1a0f44;
@@ -59,6 +72,17 @@
 		--color-neutral-80: #eceaf0;
 		--color-neutral-90: #ffffff;
 
+		--color-error-00: #430b0b;
+		--color-error-10: #711312;
+		--color-error-20: #a41c1a;
+		--color-error-30: #cd2421;
+		--color-error-40: #f22c29;
+		--color-error-50: #f64946;
+		--color-error-60: #fa6c6a;
+		--color-error-70: #fa8c8a;
+		--color-error-80: #fcabaa;
+		--color-error-90: #ffdede;
+
 		--svg-filter-neutral-00: brightness(0) saturate(100%) invert(11%) sepia(4%) saturate(2267%) hue-rotate(221deg) brightness(107%) contrast(95%);
 		--svg-filter-neutral-10: brightness(0) saturate(100%) invert(18%) sepia(18%) saturate(455%) hue-rotate(218deg) brightness(97%) contrast(90%);
 		--svg-filter-neutral-20: brightness(0) saturate(100%) invert(22%) sepia(2%) saturate(5638%) hue-rotate(220deg) brightness(77%) contrast(64%);
@@ -69,5 +93,7 @@
 		--svg-filter-neutral-70: brightness(0) saturate(100%) invert(90%) sepia(12%) saturate(112%) hue-rotate(219deg) brightness(97%) contrast(86%);
 		--svg-filter-neutral-80: brightness(0) saturate(100%) invert(85%) sepia(8%) saturate(91%) hue-rotate(219deg) brightness(110%) contrast(92%);
 		--svg-filter-neutral-90: brightness(0) saturate(100%) invert(77%) sepia(99%) saturate(0%) hue-rotate(264deg) brightness(110%) contrast(100%);
+
+		--svg-filter-error-40: brightness(0) saturate(100%) invert(27%) sepia(96%) saturate(5309%) hue-rotate(351deg) brightness(103%) contrast(89%);;
 	}
 }

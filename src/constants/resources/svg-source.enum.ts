@@ -7,5 +7,6 @@ export enum SVGSource {
 	DoubleArrowLeft = "double-arrow--left",
 	DoubleArrowRight = "double-arrow--right",
 	Education = "education",
+	Error = "error",
 	Menu = "menu"
 };

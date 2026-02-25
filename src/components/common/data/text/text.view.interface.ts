@@ -1,6 +1,11 @@
-import { TextViewType } from "./enums/text.view.enum.ts";
+import { IViewProps } from "@components/common/types";
+import { TextViewTag } from "./enums/text.view.enum.ts";
 
-export interface ITextViewProps {
+interface ILabelProps {
+	inputName?: string;
+}
+
+export interface ITextViewProps extends IViewProps, ILabelProps {
 	content: string;
-	type?: TextViewType;
+	tag?: TextViewTag;
 };

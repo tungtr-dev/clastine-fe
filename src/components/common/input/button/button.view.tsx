@@ -2,7 +2,7 @@ import { IconView } from "@components/common/data";
 import { IButtonViewProps } from "./button.view.interface.ts";
 import { ButtonViewVariant } from "./enums/button.view.enum.ts";
 import { generateClassModifiers } from "@functions";
-import "./button.view.scss";
+import "./styles/button.view.scss";
 
 export const ButtonView = ({
 	label,
