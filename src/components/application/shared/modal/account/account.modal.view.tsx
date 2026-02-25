@@ -1,12 +1,25 @@
-import { InputFieldView } from "@components/common/input";
+import { ButtonType, ButtonView, InputFieldView, InputType } from "@components/common/input";
 import { ModalOverlayView } from "@components/common/overlay";
 import { ModalID } from "@constants";
 import { useAppDispatch, useAppSelector } from "@hooks";
 import { modalActions, selectModal } from "@store";
+import { useForm } from "react-hook-form";
+import { ISignUpFormInput } from "./account.modal.view.interface.ts";
 import "./account.modal.view.scss";
-import { InputFieldType } from "components/common/input/input-field/enums/input-field.view.enum.ts";
 
 export const AccountModalView = () => {
+	const {
+		register,
+		formState: { errors },
+		handleSubmit,
+		clearErrors
+	} = useForm<ISignUpFormInput>();
+
+	const onSubmit = (data: object) => {
+		console.log(data)
+		clearErrors()
+	};
+
 	const isOpen = useAppSelector(selectModal(ModalID.Account));
 
 	const dispatch = useAppDispatch();
@@ -14,24 +27,35 @@ export const AccountModalView = () => {
 	return (
 		<ModalOverlayView
 			className="account-modal"
-			header="Account"
+			header="Sign Up"
 			isOpen={isOpen}
 			close={() => dispatch(modalActions.close(ModalID.Account))}
 		>
-			<div className="account-modal__content">
-				<InputFieldView
-					name="email"
-					label="Email"
-					description="Your email here"
-				/>
-				<InputFieldView
-					name="password"
-					label="Password"
-					description="Your password here"
-					type={InputFieldType.Password}
-					error="This is not an email bro"
-				/>
-			</div>
+			<form onSubmit={handleSubmit(onSubmit)}>
+				<div className="account-modal__content">
+					<InputFieldView
+						registry={register("email", { required: "Email address is required" })}
+						label="Email"
+						placeholder="youremail@domain.name"
+						error={errors.email?.message}
+					/>
+					<InputFieldView
+						registry={register("displayName")}
+						label="Display Name"
+						placeholder="Your Name"
+					/>
+					<InputFieldView
+						registry={register("password", { required: "Password is required" })}
+						label="Password"
+						type={InputType.Password}
+						error={errors.password?.message}
+					/>
+					<ButtonView
+						label="Sign Up"
+						type={ButtonType.Submit}
+					/>
+				</div>
+			</form>
 		</ModalOverlayView>
 	);
 };

@@ -1,11 +1,16 @@
-import { Ref } from "react";
 import { InputType } from "./enums/input-field.view.enum.ts";
+import { ChangeHandler, RefCallBack } from "react-hook-form";
+
+interface IInputRegistry {
+	name: string;
+	ref: RefCallBack;
+	onChange: ChangeHandler;
+	onBlur: ChangeHandler;
+}
 
 export interface IInputViewProps {
-	name: string;
+	registry: IInputRegistry;
 	placeholder?: string;
-	isRequired?: boolean;
-	ref?: Ref<HTMLInputElement>;
 }
 
 export interface IInputFieldViewProps extends IInputViewProps {

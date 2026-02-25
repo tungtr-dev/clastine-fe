@@ -1,12 +1,13 @@
 import { IconView } from "@components/common/data";
 import { IButtonViewProps } from "./button.view.interface.ts";
-import { ButtonViewVariant } from "./enums/button.view.enum.ts";
+import { ButtonType, ButtonViewVariant } from "./enums/button.view.enum.ts";
 import { generateClassModifiers } from "@functions";
 import "./styles/button.view.scss";
 
 export const ButtonView = ({
 	label,
 	icon,
+	type = ButtonType.Button,
 	variant = ButtonViewVariant.Filled,
 	isCompact,
 	isStretched,
@@ -23,7 +24,7 @@ export const ButtonView = ({
 	return (
 		<button
 			className={`button ${classModifiers}`}
-			type="button"
+			type={type}
 			onClick={onClick}
 		>
 			{icon && <IconView source={icon} />}
