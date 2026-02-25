@@ -1,5 +1,6 @@
-export enum TextViewType {
-	Label = "span",
+export enum TextViewTag {
+	Normal = "span",
+	Label = "label",
 	Paragraph = "p",
 	Header_1 = "h1",
 	Header_2 = "h2",

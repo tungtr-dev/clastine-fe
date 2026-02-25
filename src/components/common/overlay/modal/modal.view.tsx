@@ -1,4 +1,4 @@
-import { TextView, TextViewType } from "@components/common/data";
+import { TextView, TextViewTag } from "@components/common/data";
 import { IModalViewProps } from "./modal.view.interface.ts";
 import { ButtonView, ButtonViewVariant } from "@components/common/input";
 import { SVGSource } from "@constants";
@@ -16,7 +16,7 @@ export const ModalView = ({
 			<div className="modal__header">
 				<TextView
 					content={header}
-					type={TextViewType.Header_3}
+					tag={TextViewTag.Header_3}
 				/>
 				<ButtonView
 					label=""

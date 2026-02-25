@@ -1,0 +1,45 @@
+.input-field {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+
+	input {
+		border: var(--border-common);
+		border-radius: 4px;
+		font-size: 16px;
+		outline: none;
+		padding: 8px;
+
+		transition: border .2s;
+
+		&:focus {
+			border-color: var(--color-primary-40);
+		}
+	}
+
+	&__description {
+		color: var(--color-neutral-40);
+		font-size: 13px;
+	}
+
+	&__error {
+		color: var(--color-error-40);
+		display: flex;
+		align-items: center;
+		font-size: 13px;
+		gap: 4px;
+
+		.icon {
+			filter: var(--svg-filter-error-40);
+			width: 16px;
+			height: 16px;
+		}
+	}
+
+	&--error {
+		input, input:focus {
+			border-color: var(--color-error-40);
+			color: var(--color-error-40);
+		}
+	}
+}

@@ -7,7 +7,7 @@
 
 	background: var(--color-neutral-00);
 	border-radius: 8px;
-	color: var(--color-neutral-30);
+	color: var(--color-neutral-40);
 	padding: 8px;
 
 	transition:
@@ -15,7 +15,7 @@
 		gap .5s;
 
 	.icon {
-		filter: var(--svg-filter-neutral-30);
+		filter: var(--svg-filter-neutral-40);
 
 		transition: all .2s;
 	}
