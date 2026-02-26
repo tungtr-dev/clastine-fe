@@ -2,10 +2,13 @@ import { IViewProps } from "@components/common/types";
 import { TextViewTag } from "./enums/text.view.enum.ts";
 
 interface ILabelProps {
-	inputName?: string;
+	htmlFor?: string;
 }
 
-export interface ITextViewProps extends IViewProps, ILabelProps {
-	content: string;
+interface ITextViewContentProps extends ILabelProps {
+	content: string | ITextViewContentProps[];
 	tag?: TextViewTag;
-};
+	onClick?: () => void;
+}
+
+export interface ITextViewProps extends IViewProps, ITextViewContentProps {};

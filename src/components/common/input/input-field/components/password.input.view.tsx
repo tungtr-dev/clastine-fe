@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { SVGSource } from "@constants";
 import { ButtonView } from "../../button/button.view.tsx";
-import { InputType } from "../enums/input-field.view.enum.ts";
+import { InputType } from "../constants/input-type.enum.ts";
 import { IInputViewProps } from "../input-field.view.interface.ts";
 import { ButtonViewVariant } from "../../button/enums/button.view.enum.ts";
 

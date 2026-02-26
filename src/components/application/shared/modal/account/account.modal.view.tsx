@@ -1,61 +1,32 @@
-import { ButtonType, ButtonView, InputFieldView, InputType } from "@components/common/input";
 import { ModalOverlayView } from "@components/common/overlay";
 import { ModalID } from "@constants";
-import { useAppDispatch, useAppSelector } from "@hooks";
-import { modalActions, selectModal } from "@store";
-import { useForm } from "react-hook-form";
-import { ISignUpFormInput } from "./account.modal.view.interface.ts";
+import { useAppSelector, useAppDispatch } from "@hooks";
+import { selectModal, modalActions } from "@store";
+import { useState } from "react";
+import { AccountFormId } from "./constants/account-form.id.enum.ts";
+import { AccountModalContext } from "./utilities/contexts/account.modal.context.interface.ts";
+import { AccountFormView, AccountModalTitle } from "./constants/account.modal.const.ts";
 import "./account.modal.view.scss";
 
 export const AccountModalView = () => {
-	const {
-		register,
-		formState: { errors },
-		handleSubmit,
-		clearErrors
-	} = useForm<ISignUpFormInput>();
-
-	const onSubmit = (data: object) => {
-		console.log(data)
-		clearErrors()
-	};
-
 	const isOpen = useAppSelector(selectModal(ModalID.Account));
 
 	const dispatch = useAppDispatch();
 
+	const [form, setForm] = useState<AccountFormId>(AccountFormId.Register);
+
+	const Form = AccountFormView[form];
+
 	return (
 		<ModalOverlayView
 			className="account-modal"
-			header="Sign Up"
+			header={AccountModalTitle[form]}
 			isOpen={isOpen}
 			close={() => dispatch(modalActions.close(ModalID.Account))}
 		>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<div className="account-modal__content">
-					<InputFieldView
-						registry={register("email", { required: "Email address is required" })}
-						label="Email"
-						placeholder="youremail@domain.name"
-						error={errors.email?.message}
-					/>
-					<InputFieldView
-						registry={register("displayName")}
-						label="Display Name"
-						placeholder="Your Name"
-					/>
-					<InputFieldView
-						registry={register("password", { required: "Password is required" })}
-						label="Password"
-						type={InputType.Password}
-						error={errors.password?.message}
-					/>
-					<ButtonView
-						label="Sign Up"
-						type={ButtonType.Submit}
-					/>
-				</div>
-			</form>
+			<AccountModalContext value={{ setForm }}>
+				<Form />
+			</AccountModalContext>
 		</ModalOverlayView>
 	);
 };

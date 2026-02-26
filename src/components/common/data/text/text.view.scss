@@ -1,0 +1,7 @@
+.text {
+	&--interactive {
+		color: var(--color-primary-40);
+		cursor: pointer;
+		text-decoration: underline;
+	}
+}
