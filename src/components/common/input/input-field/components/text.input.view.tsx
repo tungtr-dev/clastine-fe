@@ -1,4 +1,4 @@
-import { InputType } from "../enums/input-field.view.enum.ts";
+import { InputType } from "../constants/input-type.enum.ts";
 import { IInputViewProps } from "../input-field.view.interface.ts";
 
 export const TextInputView = ({

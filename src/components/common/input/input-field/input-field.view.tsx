@@ -1,8 +1,9 @@
 import { useRef } from "react";
 import { IconView, TextView, TextViewTag } from "@components/common/data";
 import { SVGSource } from "@constants";
-import { InputType, InputViewByType } from "./enums/input-field.view.enum.ts";
+import { InputType } from "./constants/input-type.enum.ts";
 import { IInputFieldViewProps } from "./input-field.view.interface.ts";
+import { InputViewByType } from "./constants/input-view-by-type.const.ts";
 import { generateClassModifiers } from "@functions";
 import "./input-field.view.scss";
 
@@ -27,7 +28,7 @@ export const InputFieldView = ({
 			<TextView
 				content={label}
 				tag={TextViewTag.Label}
-				inputName={registry.name}
+				htmlFor={registry.name}
 			/>
 			{description &&
 				<TextView

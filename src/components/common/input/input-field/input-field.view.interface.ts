@@ -1,4 +1,4 @@
-import { InputType } from "./enums/input-field.view.enum.ts";
+import { InputType } from "./constants/input-type.enum.ts";
 import { ChangeHandler, RefCallBack } from "react-hook-form";
 
 interface IInputRegistry {
