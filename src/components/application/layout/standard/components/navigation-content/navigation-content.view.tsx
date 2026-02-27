@@ -1,6 +1,6 @@
 import { Breakpoint } from "@constants";
 import { useAppSelector } from "@hooks";
-import { selectBreakpoint } from "@store";
+import { selectBreakpoint } from "@store/slices";
 import { useContext } from "react";
 import { NavigationContext } from "../../utilities/contexts/navigation.context.ts";
 import { NavigationHeaderButtonType } from "../navigation-header/enums/navigation-header.view.enum.ts";
