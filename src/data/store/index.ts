@@ -1,2 +1,2 @@
 export { store } from "./store.ts";
-export type { TRootState, TDispatch } from "./store.interface.ts";
+export type { TRootState, TDispatch, IThunk } from "./store.interface.ts";

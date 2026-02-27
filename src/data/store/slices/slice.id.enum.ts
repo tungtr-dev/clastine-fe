@@ -1,5 +1,5 @@
 export enum SliceID {
-	Account = "account-slice",
+	Authentication = "authentication-slice",
 	Breakpoint = "breakpoint-slice",
 	Modal = "modal-slice"
 };

@@ -1,12 +1,16 @@
 import { TextView, TextViewTag } from "@components/common/data";
+import { useAppDispatch } from "@hooks";
 import { InputFieldView, InputType, ButtonView, ButtonType } from "@components/common/input";
 import { useContext } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { IRegisterFormInput } from "../account.modal.view.interface.ts";
 import { AccountFormId } from "../constants/account-form.id.enum.ts";
 import { AccountModalContext } from "../utilities/contexts/account.modal.context.interface.ts";
+import { authenticationThunk } from "@store/thunks";
 
 export const RegisterFormView = () => {
+	const dispatch = useAppDispatch();
+
 	const { setForm } = useContext(AccountModalContext);
 
 	const {
@@ -15,8 +19,8 @@ export const RegisterFormView = () => {
 		handleSubmit
 	} = useForm<IRegisterFormInput>();
 
-	const onSubmit: SubmitHandler<IRegisterFormInput> = data => {
-		console.log(data);
+	const onSubmit: SubmitHandler<IRegisterFormInput> = input => {
+		dispatch(authenticationThunk.register(input));
 	};
 
 	return (<>

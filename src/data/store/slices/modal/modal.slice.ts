@@ -1,7 +1,8 @@
-import { ModalID, SliceID } from "@constants";
+import { ModalID } from "@constants";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IModalSelector, IModalState } from "./modal.slice.interface.ts";
-import { TRootState } from "data/store/store.interface.ts";
+import { TRootState } from "@store";
+import { SliceID } from "../slice.id.enum.ts";
+import { IModalState, IModalSelector } from "./modal.slice.interface.ts";
 
 const ModalIDs: ModalID[] = [
 	ModalID.Account
@@ -23,7 +24,7 @@ ModalIDs.forEach(id => {
 
 export const modalSlice = createSlice({
 	name: SliceID.Modal,
-	initialState: initialState,
+	initialState: initialState as IModalState,
 	reducers: {
 		open: (state, action: PayloadAction<ModalID>) => {
 			state[action.payload] = true;

@@ -1,0 +1,2 @@
+export { authenticationService } from "./services/authentication/authentication.service.ts";
+export type { IAuthenticationRegisterRequest, IAuthenticationRegisterResponse } from "./services/authentication/authentication.service.interface.ts";
