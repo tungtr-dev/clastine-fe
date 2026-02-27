@@ -1,7 +1,8 @@
-import { Breakpoint, SliceID } from "@constants";
-import { IBreakpointState } from "./breakpoint.slice.interface.ts";
+import { Breakpoint } from "@constants";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { TRootState } from "../../store.interface.ts";
+import { SliceID } from "../slice.id.enum.ts";
+import { IBreakpointState } from "./breakpoint.slice.interface.ts";
+import { TRootState } from "@store";
 
 export const breakpointSlice = createSlice({
 	name: SliceID.Breakpoint,
