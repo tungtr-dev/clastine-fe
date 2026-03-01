@@ -7,6 +7,7 @@ import { IRegisterFormInput } from "../account.modal.view.interface.ts";
 import { AccountFormId } from "../constants/account-form.id.enum.ts";
 import { AccountModalContext } from "../utilities/contexts/account.modal.context.interface.ts";
 import { authenticationThunk } from "@store/thunks";
+import { userService } from "@services";
 
 export const RegisterFormView = () => {
 	const dispatch = useAppDispatch();
@@ -17,7 +18,9 @@ export const RegisterFormView = () => {
 		register,
 		formState: { errors },
 		handleSubmit
-	} = useForm<IRegisterFormInput>();
+	} = useForm<IRegisterFormInput>({
+		reValidateMode: "onSubmit"
+	});
 
 	const onSubmit: SubmitHandler<IRegisterFormInput> = input => {
 		dispatch(authenticationThunk.register(input));
@@ -40,7 +43,14 @@ export const RegisterFormView = () => {
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<div className="account-modal__content">
 				<InputFieldView
-					registry={register("email", { required: "Email address is required" })}
+					registry={register("email", {
+						required: "Email address is required",
+						validate: async email => {
+							const userExists = await userService.getUserByEmail(email);
+
+							return !userExists || "A user with this email already exists";
+						}
+					})}
 					label="Email"
 					placeholder="youremail@domain.name"
 					error={errors.email?.message}
@@ -51,7 +61,13 @@ export const RegisterFormView = () => {
 					placeholder="Your Name"
 				/>
 				<InputFieldView
-					registry={register("password", { required: "Password is required" })}
+					registry={register("password", {
+						required: "Password is required",
+						minLength: {
+							value: 6,
+							message: "Password length must be at least 6"
+						}
+					})}
 					label="Password"
 					type={InputType.Password}
 					error={errors.password?.message}

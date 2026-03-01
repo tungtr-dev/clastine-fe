@@ -14,6 +14,7 @@
 			"@components/common/input": ["components/common/input/index.ts"],
 			"@components/common/overlay": ["components/common/overlay/index.ts"],
 			"@components/common/types": ["components/common/types/index.ts"],
+			"@dtos": ["data/dtos/index.ts"],
 			"@services": ["data/services/index.ts"],
 			"@store": ["data/store/index.ts"],
 			"@store/slices": ["data/store/slices/index.ts"],
