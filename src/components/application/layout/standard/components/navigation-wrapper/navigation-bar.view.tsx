@@ -1,7 +1,7 @@
 import { Breakpoint } from "@constants";
 import { generateClassModifiers } from "@functions";
 import { useAppSelector } from "@hooks";
-import { selectBreakpoint } from "@store/slices";
+import { selectBreakpoint } from "@domain/store/slices";
 import { NavigationContentView } from "../navigation-content/navigation-content.view.tsx";
 import { NavigationHeaderButtonType } from "../navigation-header/enums/navigation-header.view.enum.ts";
 import { NavigationHeaderView } from "../navigation-header/navigation-header.view.tsx";

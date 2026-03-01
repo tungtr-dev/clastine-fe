@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { authenticationReducer, breakpointReducer, modalReducer } from "@store/slices";
+import { authenticationReducer, breakpointReducer, modalReducer } from "@domain/store/slices";
 
 export const store = configureStore({
 	reducer: {

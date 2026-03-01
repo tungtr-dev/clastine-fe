@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { authenticationService, IAuthenticationRegisterRequest } from "@services";
+import { authenticationService, IAuthenticationRegisterRequest } from "@domain/services";
 import { IAuthenticationThunk } from "./authentication.thunk.interface.ts";
 import { AuthenticationThunkAction, AuthenticationThunkRejectReason } from "./authentication.thunk.enum.ts";
 

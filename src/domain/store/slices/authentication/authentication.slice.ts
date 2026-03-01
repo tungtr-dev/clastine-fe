@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { authenticationThunk } from "@store/thunks";
+import { authenticationThunk } from "@domain/store/thunks";
 import { IAuthenticationState } from "./authentication.slice.interface.ts";
 import { SliceID } from "../slice.id.enum.ts";
 

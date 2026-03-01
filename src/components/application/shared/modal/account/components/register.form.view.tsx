@@ -6,8 +6,8 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { IRegisterFormInput } from "../account.modal.view.interface.ts";
 import { AccountFormId } from "../constants/account-form.id.enum.ts";
 import { AccountModalContext } from "../utilities/contexts/account.modal.context.interface.ts";
-import { authenticationThunk } from "@store/thunks";
-import { userService } from "@services";
+import { authenticationThunk } from "@domain/store/thunks";
+import { userService } from "@domain/services";
 
 export const RegisterFormView = () => {
 	const dispatch = useAppDispatch();
@@ -46,9 +46,15 @@ export const RegisterFormView = () => {
 					registry={register("email", {
 						required: "Email address is required",
 						validate: async email => {
-							const userExists = await userService.getUserByEmail(email);
+							try {
+								const user = await userService.getUserByEmail(email);
 
-							return !userExists || "A user with this email already exists";
+								return !user || "A user with this email already exists";
+							} catch (error) {
+								console.log(error);
+
+								return "Error!"
+							}
 						}
 					})}
 					label="Email"

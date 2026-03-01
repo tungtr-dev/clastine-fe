@@ -1,6 +1,6 @@
 import { SVGSource, Breakpoint, ModalID } from "@constants";
 import { useAppDispatch, useAppSelector, useDisclosure } from "@hooks";
-import { modalActions, selectBreakpoint } from "@store/slices";
+import { modalActions, selectBreakpoint } from "@domain/store/slices";
 import { NavigationDrawerView } from "./components/navigation-drawer/navigation-drawer.view.tsx";
 import { NavigationBarView } from "./components/navigation-wrapper/navigation-bar.view.tsx";
 import { INavigationLinkGroups } from "./utilities/contexts/navigation.context.interface.ts";

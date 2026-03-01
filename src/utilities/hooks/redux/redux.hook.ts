@@ -1,4 +1,4 @@
-import { TRootState, TDispatch } from "data/store/index.ts";
+import { TRootState, TDispatch } from "@domain/store";
 import { useDispatch, useSelector } from "react-redux";
 
 export const useAppSelector = useSelector.withTypes<TRootState>();

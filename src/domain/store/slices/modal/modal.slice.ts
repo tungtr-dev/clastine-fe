@@ -1,6 +1,6 @@
 import { ModalID } from "@constants";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { TRootState } from "@store";
+import { TRootState } from "@domain/store";
 import { SliceID } from "../slice.id.enum.ts";
 import { IModalState, IModalSelector } from "./modal.slice.interface.ts";
 

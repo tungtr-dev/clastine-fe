@@ -1,6 +1,6 @@
 import { Breakpoint } from "@constants";
-import { store } from "@store";
-import { breakpointActions } from "@store/slices";
+import { store } from "@domain/store";
+import { breakpointActions } from "@domain/store/slices";
 import { IBreakpoint } from "./breakpoint.initializer.interface.ts";
 
 export const initializeBreakpointObserver = () => {
