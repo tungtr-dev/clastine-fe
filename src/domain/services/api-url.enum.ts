@@ -5,5 +5,6 @@ export const BaseURL = {
 } as const;
 
 export const UserURL = {
-	Email: `${BaseURL.Users}/email`
+	Email: `${BaseURL.Users}/email`,
+	SignIn: `${BaseURL.Users}/sign-in`
 } as const;

@@ -3,3 +3,8 @@ export interface IRegisterPayloadDTO {
 	displayName: string;
 	password: string;
 }
+
+export interface ISignInPayloadDTO {
+	email: string;
+	password: string;
+}

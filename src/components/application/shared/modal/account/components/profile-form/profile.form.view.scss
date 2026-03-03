@@ -1,0 +1,22 @@
+.profile-form {
+	&__header {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		margin-bottom: 16px;
+	}
+
+	&__name {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+
+		* {
+			margin: 0;
+		}
+
+		p {
+			color: var(--color-neutral-40);
+		}
+	}
+}
