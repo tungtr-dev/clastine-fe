@@ -1,4 +1,4 @@
-export { authenticationReducer, authenticationActions } from "./authentication/authentication.slice.ts";
+export { authenticationReducer, authenticationActions, selectAccount } from "./authentication/authentication.slice.ts";
 
 export { breakpointReducer, breakpointActions, selectBreakpoint } from "./breakpoint/breakpoint.slice.ts";
 

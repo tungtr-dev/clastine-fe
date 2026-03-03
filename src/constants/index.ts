@@ -1,6 +1,7 @@
 export { Environment } from "./core/environment.enum.ts";
 
 export { SVGSource } from "./resources/svg-source.enum.ts";
+export { WebPSource } from "./resources/webp-source.enum.ts";
 
 export { ModalID } from "./id/modal.id.enum.ts";
 

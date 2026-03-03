@@ -3,9 +3,9 @@ import { useAppDispatch } from "@hooks";
 import { InputFieldView, InputType, ButtonView, ButtonType } from "@components/common/input";
 import { useContext } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { IRegisterFormInput } from "../account.modal.view.interface.ts";
-import { AccountFormId } from "../constants/account-form.id.enum.ts";
-import { AccountModalContext } from "../utilities/contexts/account.modal.context.interface.ts";
+import { IRegisterFormInput } from "../../account.modal.view.interface.ts";
+import { AccountFormId } from "../../constants/account-form.id.enum.ts";
+import { AccountModalContext } from "../../utilities/contexts/account.modal.context.interface.ts";
 import { authenticationThunk } from "@domain/store/thunks";
 import { userService } from "@domain/services";
 
