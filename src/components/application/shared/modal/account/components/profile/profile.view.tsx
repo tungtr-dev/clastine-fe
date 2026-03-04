@@ -3,9 +3,9 @@ import { AvatarView, AvatarViewSize, TextView, TextViewTag } from "@components/c
 import { useAppDispatch, useAppSelector } from "@hooks";
 import { authenticationActions, selectAccount } from "@domain/store/slices";
 import { ButtonView } from "@components/common/input";
-import "./profile.form.view.scss";
+import "./profile.view.scss";
 
-export const ProfileFormView = () => {
+export const ProfileView = () => {
 	const dispatch = useAppDispatch();
 
 	const account = useAppSelector(selectAccount);

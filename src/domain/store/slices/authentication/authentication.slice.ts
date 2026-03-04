@@ -17,6 +17,8 @@ export const authenticationSlice = createSlice({
 		},
 	reducers: {
 		signOut: state => {
+			state.email = "";
+			state.displayName = "";
 			state.token = "";
 			localStorage.removeItem("account");
 		}

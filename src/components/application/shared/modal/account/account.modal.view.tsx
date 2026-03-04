@@ -1,13 +1,13 @@
 import { ModalOverlayView } from "@components/common/overlay";
 import { ModalID } from "@constants";
+import { selectModal, selectAccount, modalActions } from "@domain/store/slices";
 import { useAppSelector, useAppDispatch } from "@hooks";
-import { selectModal, modalActions, selectAccount } from "@domain/store/slices";
 import { useState } from "react";
-import { AccountFormId } from "./constants/account-form.id.enum.ts";
-import { AccountModalContext } from "./utilities/contexts/account.modal.context.interface.ts";
+import { ProfileView } from "./components/profile/profile.view.tsx";
+import { AccountContentID } from "./constants/account-content-id.enum.ts";
 import { AccountFormView, AccountModalTitle } from "./constants/account.modal.const.ts";
+import { AccountModalContext } from "./utilities/contexts/account.modal.context.interface.ts";
 import "./account.modal.view.scss";
-import { ProfileFormView } from "./components/profile-form/profile.form.view.tsx";
 
 export const AccountModalView = () => {
 	const isOpen = useAppSelector(selectModal(ModalID.Account));
@@ -16,22 +16,21 @@ export const AccountModalView = () => {
 
 	const account = useAppSelector(selectAccount);
 
-	const [form, setForm] = useState<AccountFormId>(AccountFormId.Register);
+	const [contentID, setContentID] = useState<AccountContentID>(AccountContentID.SignInForm);
 
-	const Form = AccountFormView[form];
+	const Form = account.token ? ProfileView : AccountFormView[contentID];
+
+	const title = AccountModalTitle[account.token ? AccountContentID.Profile : contentID];
 
 	return (
 		<ModalOverlayView
 			className="account-modal"
-			header={AccountModalTitle[form]}
+			header={title}
 			isOpen={isOpen}
 			close={() => dispatch(modalActions.close(ModalID.Account))}
 		>
-			<AccountModalContext value={{ setForm }}>
-				{account.token
-					? <ProfileFormView />
-					: <Form />
-				}
+			<AccountModalContext value={{ setForm: setContentID }}>
+				<Form />
 			</AccountModalContext>
 		</ModalOverlayView>
 	);

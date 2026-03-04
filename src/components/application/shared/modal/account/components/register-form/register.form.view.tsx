@@ -1,13 +1,13 @@
 import { TextView, TextViewTag } from "@components/common/data";
-import { useAppDispatch } from "@hooks";
 import { InputFieldView, InputType, ButtonView, ButtonType } from "@components/common/input";
+import { userService } from "@domain/services";
+import { authenticationThunk } from "@domain/store/thunks";
+import { useAppDispatch } from "@hooks";
 import { useContext } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { IRegisterFormInput } from "../../account.modal.view.interface.ts";
-import { AccountFormId } from "../../constants/account-form.id.enum.ts";
+import { AccountContentID } from "../../constants/account-content-id.enum.ts";
 import { AccountModalContext } from "../../utilities/contexts/account.modal.context.interface.ts";
-import { authenticationThunk } from "@domain/store/thunks";
-import { userService } from "@domain/services";
 
 export const RegisterFormView = () => {
 	const dispatch = useAppDispatch();
@@ -35,7 +35,7 @@ export const RegisterFormView = () => {
 				},
 				{
 					content: "Sign in.",
-					onClick: () => setForm(AccountFormId.SignIn)
+					onClick: () => setForm(AccountContentID.SignInForm)
 				}
 			]}
 			tag={TextViewTag.Paragraph}

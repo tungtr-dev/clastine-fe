@@ -1,5 +1,6 @@
 export { Environment } from "./core/environment.enum.ts";
 
+export { ResourceType } from "./resources/resource-type.enum.ts";
 export { SVGSource } from "./resources/svg-source.enum.ts";
 export { WebPSource } from "./resources/webp-source.enum.ts";
 

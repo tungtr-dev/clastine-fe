@@ -1,12 +1,12 @@
 import { TextView, TextViewTag } from "@components/common/data";
 import { InputFieldView, InputType, ButtonView, ButtonType } from "@components/common/input";
+import { authenticationThunk } from "@domain/store/thunks";
+import { useAppDispatch } from "@hooks";
 import { useContext } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { ISignInFormInput } from "../../account.modal.view.interface.ts";
-import { AccountFormId } from "../../constants/account-form.id.enum.ts";
+import { AccountContentID } from "../../constants/account-content-id.enum.ts";
 import { AccountModalContext } from "../../utilities/contexts/account.modal.context.interface.ts";
-import { authenticationThunk } from "@domain/store/thunks";
-import { useAppDispatch } from "@hooks";
 
 export const SignInFormView = () => {
 	const dispatch = useAppDispatch();
@@ -22,7 +22,7 @@ export const SignInFormView = () => {
 	});
 
 	const onSubmit: SubmitHandler<ISignInFormInput> = input => {
-			dispatch(authenticationThunk.signIn(input));
+		dispatch(authenticationThunk.signIn(input));
 	};
 
 	return (<>
@@ -34,7 +34,7 @@ export const SignInFormView = () => {
 				},
 				{
 					content: "Register an account.",
-					onClick: () => setForm(AccountFormId.Register)
+					onClick: () => setForm(AccountContentID.RegisterForm)
 				}
 			]}
 			tag={TextViewTag.Paragraph}
@@ -52,11 +52,6 @@ export const SignInFormView = () => {
 					label="Password"
 					type={InputType.Password}
 					error={errors.password?.message}
-				/>
-				<TextView
-					className="account-modal__option"
-					content="Forgot Password"
-					onClick={() => {}}
 				/>
 				<ButtonView
 					label="Sign in"

@@ -1,7 +1,7 @@
-import { SVGSource } from "@constants";
+import { SVGSource, WebPSource } from "@constants";
 
 export interface INavigationLinkProps {
 	label: string;
-	icon: SVGSource;
+	source: SVGSource | WebPSource;
 	onClick?: () => void;
 };

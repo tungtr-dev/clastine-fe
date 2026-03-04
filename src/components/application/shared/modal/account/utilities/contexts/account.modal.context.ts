@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
-import { AccountFormId } from "../../constants/account-form.id.enum.ts";
+import { AccountContentID } from "../../constants/account-content-id.enum.ts";
 
 export interface IAccountModalContext {
-	setForm: Dispatch<SetStateAction<AccountFormId>>;
+	setForm: Dispatch<SetStateAction<AccountContentID>>;
 }

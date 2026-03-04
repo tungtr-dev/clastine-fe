@@ -14,10 +14,10 @@ const generateNavigationLinkViews = (
 	startIndex: number = 0
 ) => links
 	.slice(startIndex)
-	.map(({ icon, label, onClick }, index) =>
+	.map(({ source: icon, label, onClick }, index) =>
 		<NavigationLinkView
 			key={index}
-			icon={icon}
+			source={icon}
 			label={label}
 			onClick={onClick}
 		/>
