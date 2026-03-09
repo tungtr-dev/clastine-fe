@@ -6,6 +6,7 @@ import { NavigationBarView } from "./components/navigation-wrapper/navigation-ba
 import { INavigationLinkGroups } from "./utilities/contexts/navigation.context.interface.ts";
 import { NavigationContext } from "./utilities/contexts/navigation.context.ts";
 import "./standard.layout.scss";
+import { CardView } from "@components/common/container";
 
 export const StandardLayout = () => {
 	const [isDrawerOpen, drawerActions] = useDisclosure(false);
@@ -59,7 +60,9 @@ export const StandardLayout = () => {
 				{breakpoint === Breakpoint.Small && <NavigationDrawerView />}
 				<NavigationBarView isCompact={isNavigationBarCompact} />
 				<div className="standard-layout__content">
-					Main Content
+					<CardView>
+						Main Content
+					</CardView>
 				</div>
 			</div>
 		</NavigationContext>
