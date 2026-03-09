@@ -10,6 +10,7 @@
 			"@components/application/core": ["components/application/core/index.ts"],
 			"@components/application/layout": ["components/application/layout/index.ts"],
 			"@components/application/shared": ["components/application/shared/index.ts"],
+			"@components/common/container": ["components/common/container/index.ts"],
 			"@components/common/data": ["components/common/data/index.ts"],
 			"@components/common/input": ["components/common/input/index.ts"],
 			"@components/common/overlay": ["components/common/overlay/index.ts"],
